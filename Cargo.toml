@@ -1,0 +1,10 @@
+[package]
+name = "health"
+version = "1.0.0"
+edition = "2021"
+readme = "README.md"
+homepage = "https://github.com/LXGaming/health-rs"
+repository = "https://github.com/LXGaming/health-rs.git"
+license = "Apache-2.0"
+
+[dependencies]
