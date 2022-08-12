@@ -1,0 +1,18 @@
+﻿# Directories
+**/.git/
+**/.github/
+**/.idea/
+**/bin/
+**/logs/
+**/obj/
+**/out/
+**/target/
+
+# Files
+**/.dockerignore
+**/.gitattributes
+**/.gitignore
+**/Dockerfile*
+**/LICENSE
+**/*.md
+**/*.ps1
