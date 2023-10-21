@@ -36,6 +36,8 @@ jobs:
           os: windows-latest
     name: Rust (${{ matrix.name }})
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
     defaults:
       run:
         shell: bash
