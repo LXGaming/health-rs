@@ -1,6 +1,6 @@
-use std::{env, str};
 use std::io::Read;
 use std::net::{Shutdown, TcpStream};
+use std::{env, str};
 
 const HEALTHY: u8 = 0;
 const UNHEALTHY: u8 = 1;
@@ -8,7 +8,11 @@ const MAXIMUM_STRING_SIZE: u32 = 4096; // 4 KiB
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let address = if args.len() == 2 { &args[1] } else { "127.0.0.1:4325" };
+    let address = if args.len() == 2 {
+        &args[1]
+    } else {
+        "127.0.0.1:4325"
+    };
 
     let mut stream = TcpStream::connect(address).expect("connect error");
     let mut buffer = Vec::new();
