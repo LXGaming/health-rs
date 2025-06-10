@@ -1,4 +1,5 @@
-﻿FROM rust:alpine AS build
+﻿# syntax=docker/dockerfile:1
+FROM rust:alpine AS build
 WORKDIR /src
 
 COPY . .
