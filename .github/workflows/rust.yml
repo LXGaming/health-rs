@@ -57,11 +57,11 @@ jobs:
         toolchain: nightly
         targets: ${{ matrix.target }}
     - name: Build
-      run: cargo build --all-features --out-dir ./dist/${{ matrix.name }} --release --target ${{ matrix.target }} -Z unstable-options
+      run: cargo build --all-features --out-dir "./dist/${{ matrix.name }}" --release --target "${{ matrix.target }}" -Z unstable-options
     - name: Archive Binaries
       if: github.event_name == 'create' && github.event.ref_type == 'tag'
       run: |
-        cd $GITHUB_WORKSPACE/dist/${{ matrix.name }} && 7z a -sdel ../${GITHUB_REPOSITORY#*/}-${{ matrix.name }}.zip .
+        cd "$GITHUB_WORKSPACE/dist/${{ matrix.name }}" && 7z a -sdel "../${GITHUB_REPOSITORY#*/}-${{ matrix.name }}.zip" .
     - name: Setup Release
       if: github.event_name == 'create' && github.event.ref_type == 'tag'
       run: echo "release_name=${GITHUB_REPOSITORY#*/} ${GITHUB_REF_NAME}" >> $GITHUB_ENV
