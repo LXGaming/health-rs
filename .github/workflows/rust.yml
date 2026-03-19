@@ -57,7 +57,7 @@ jobs:
           toolchain: nightly
           targets: ${{ matrix.target }}
       - name: Build
-        run: cargo build --all-features --out-dir "./dist/${{ matrix.name }}" --release --target "${{ matrix.target }}" -Z unstable-options
+        run: cargo build --all-features --artifact-dir "./dist/${{ matrix.name }}" --release --target "${{ matrix.target }}" -Z unstable-options
       - name: Archive Binaries
         if: github.event_name == 'create' && github.event.ref_type == 'tag'
         run: |
